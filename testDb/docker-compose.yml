@@ -1,0 +1,26 @@
+version: '3.1'
+
+services:
+  apprichelocal:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "54322:5432"
+    environment:
+      POSTGRES_DB: base_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: b48a36060fdca917362366c7a22212ce
+    command: postgres -c 'max_connections=10000'
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+  redis:
+    image: "redis:latest"
+    ports:
+      - "6379:6379"
+    restart: always
+    command: [ "redis-server", "--appendonly", "yes" ]
+    
+
+volumes:
+  postgres_data:
