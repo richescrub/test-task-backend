@@ -46,7 +46,7 @@ if config.config_file_name is not None:
 model_classes = []
 
 # Укажите путь к директории с файлами моделей
-models_directory = "beek/models"
+models_directory = "riche_questionnaire_back_end/models"
 
 for filename in os.listdir(models_directory):
     if filename.endswith(".py"):

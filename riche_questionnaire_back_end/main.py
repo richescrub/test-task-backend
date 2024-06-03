@@ -2,8 +2,8 @@ import io
 from tkinter import Image
 from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
-from beek.routers.users import user_router
-from beek.routers.forms import form_router
+from riche_questionnaire_back_end.routers.users import user_router
+from riche_questionnaire_back_end.routers.forms import form_router
 from constants import MEDIA_CONSTANTS
 from sqlalchemy.orm import Session
 
@@ -16,7 +16,11 @@ from fastapi.routing import APIWebSocketRoute
 
 from urllib.parse import quote
 
-from beek.decorators import chek_no_photo, run_in_parallel, header_api_key_auth
+from riche_questionnaire_back_end.decorators import (
+    chek_no_photo,
+    run_in_parallel,
+    header_api_key_auth,
+)
 from constants import MEDIA_CONSTANTS
 from .db import get_db
 from fastapi import FastAPI

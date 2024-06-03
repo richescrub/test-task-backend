@@ -163,3 +163,4 @@ cython_debug/
 
 DevMigrations/versions
 poetry.lock
+testDb/postgres_data

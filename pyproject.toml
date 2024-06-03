@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "beek"
+name = "riche_questionnaire_back_end"
 version = "0.1.0"
 description = ""
 authors = ["Ilya Barinov <ilya.bv.2002@bk.ru>"]

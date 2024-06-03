@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from passlib.hash import sha256_crypt
 
 from ..db import get_db
-from beek.models.users_models import User
+from riche_questionnaire_back_end.models.users_models import User
 
 user_router = APIRouter()
 

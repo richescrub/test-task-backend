@@ -7,7 +7,7 @@ from typing import Callable, Union
 from fastapi import HTTPException, Header, Request
 from concurrent.futures import ThreadPoolExecutor
 from sqlalchemy.orm.session import Session
-from beek.db import getRedis
+from riche_questionnaire_back_end.db import getRedis
 import pickle
 from fastapi.responses import JSONResponse, StreamingResponse
 from .halpers import data_keys_Ayth, decode_access_token

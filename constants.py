@@ -1,4 +1,4 @@
-from beek.models.users_models import User
+from riche_questionnaire_back_end.models.users_models import User
 
 
 MEDIA_CONSTANTS = {

@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 import random
 
 from ..db import get_db
-from beek.models.users_models import User, Form
+from riche_questionnaire_back_end.models.users_models import User, Form
 
 form_router = APIRouter()
 

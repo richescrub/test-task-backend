@@ -1,5 +1,5 @@
 {
-  "name": "beek",
+  "name": "riche_questionnaire_back_end",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,8 +7,8 @@
     "test": "tests"
   },
   "scripts": {
-    "start": "uvicorn beek.main:app --port 8000",
-    "dev": "uvicorn beek.main:app --reload --port 8001",
+    "start": "uvicorn riche_questionnaire_back_end.main:app --port 8000",
+    "dev": "uvicorn riche_questionnaire_back_end.main:app --reload --port 8001",
     "m": "alembic revision --autogenerate",
     "u": "alembic upgrade head",
     "d": "alembic downgrade -1"
