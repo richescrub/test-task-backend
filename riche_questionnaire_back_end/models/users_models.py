@@ -1,9 +1,8 @@
 from sqlalchemy import Column, BigInteger, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-from sqlalchemy.ext.declarative import declarative_base
 from passlib.hash import sha256_crypt
 
-Base = declarative_base()
+from riche_questionnaire_back_end.db import Base
 
 
 class User(Base):
@@ -22,8 +21,6 @@ class User(Base):
     soName = Column(String, doc="Фамилия")
     email = Column(String, doc="Emai")
     password = Column(String, doc="Password")
-
-    forms = relationship("Form", back_populates="user")
 
     def to_dict(self):
         return {
@@ -47,11 +44,3 @@ class User(Base):
     def __str__(self) -> str:
         return f"{self.name} {self.soName}"
 
-
-class Form(Base):
-    __tablename__ = "forms_forms"
-    id = Column(BigInteger, primary_key=True, index=True)
-    user_id_creat = Column(BigInteger, ForeignKey("user_User.id"), nullable=False)
-    url = Column(String, nullable=False)
-
-    user = relationship("User", back_populates="forms")

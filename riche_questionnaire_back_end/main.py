@@ -3,7 +3,6 @@ from tkinter import Image
 from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
 from riche_questionnaire_back_end.routers.users import user_router
-from riche_questionnaire_back_end.routers.forms import form_router
 from constants import MEDIA_CONSTANTS
 from sqlalchemy.orm import Session
 
@@ -70,11 +69,6 @@ app.include_router(
     apply_decorator_to_router(user_router, header_api_key_auth(_router="users")),
     prefix="/api/v1/users",
     tags=["users"],
-)
-app.include_router(
-    apply_decorator_to_router(form_router, header_api_key_auth(_router="forms")),
-    prefix="/api/v1/forms",
-    tags=["forms"],
 )
 
 

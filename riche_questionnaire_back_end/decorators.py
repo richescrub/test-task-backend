@@ -138,28 +138,6 @@ def chek_no_photo(func):
     return wrapper
 
 
-# def run_in_parallel(func, **kvargs):
-#     @wraps(func)
-#     async def wrapper(*args, **kwargs):
-#         def process_request():
-#             loop = asyncio.new_event_loop()
-#             asyncio.set_event_loop(loop)
-
-#             async def data_func():
-#                 if inspect.iscoroutinefunction(func):
-#                     return await func(*args, **kwargs)
-#                 else:
-#                     return func(*args, **kwargs)
-
-#             return loop.run_until_complete(data_func())
-
-#         loop = asyncio.get_running_loop()
-#         result = await loop.run_in_executor(None, process_request)
-#         return result
-
-#     return wrapper
-
-
 def run_in_parallel(func):
     @wraps(func)
     async def wrapper(*args, **kwargs):
